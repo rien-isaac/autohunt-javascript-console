@@ -1,18 +1,28 @@
 class Dungeon {
-  constructor(name, type, numOfEnemies, player, enemies) {
+  constructor(name, type, player) {
     this.name = name;
     this.type = type;
-    this.numOfEnemies = numOfEnemies;
     this.player = player;
-    this.enemies = enemies;
+    this.minEnemy = 6;
+    this.maxEnemy = 10;
+    this.enemies = [];
   }
 
-  addEnemies(enemy) {
+  addEnemies() {
     //add enemies
-    this.enemies.push(enemy);
+    let numOfEnemy = Math.round(
+      Math.random() * (this.maxEnemy - this.minEnemy) + this.minEnemy
+    );
+
+    for (let i = 0; i < numOfEnemy; i++) {
+      let goblin = new Enemy(`Test-${i}`, 5, 5, 10);
+      this.enemies.push(goblin);
+    }
   }
 
   exploration() {
+    console.log(`${this.player.name} enters ${this.name}.`);
+
     this.enemies.forEach(function (enemy) {
       console.log(`${player.name} encounters ${enemy.name}.`);
 
