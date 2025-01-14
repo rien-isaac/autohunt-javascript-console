@@ -23,9 +23,8 @@ class Dungeon {
 
   closeDungeon() {
     for (let i = 0; i < this.enemies.length; i++) {
+      //remove from the array if is dead
       if (this.enemies[i].hp <= 0) {
-        console.log(`${this.enemies[i].name} is dead.`);
-
         this.enemies.splice(i); //remove from the array
       }
     }

@@ -1,4 +1,5 @@
 let player = new Player("Jonas");
+
 let goblin = new Enemy("Goblin", 1, 1);
 let orc = new Enemy("Orc", 1, 1);
 let wolf = new Enemy("Wolf", 1, 1);
@@ -18,3 +19,10 @@ landOfTheGoblin.exploration();
 landOfTheGoblin.closeDungeon();
 
 player.displayInfo();
+
+goblin.dropItem();
+player.pickItem(goblin.dropItem());
+
+console.log(`Player's Inventory: ${player.inventory}`);
+
+console.log(player);

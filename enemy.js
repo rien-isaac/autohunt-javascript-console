@@ -7,8 +7,10 @@ class Enemy {
     this.maxHp = this.level * 5 + 5;
     this.hp = this.maxHp;
     this.dropItemList = ["foil", "good shit", "maryjane"];
+    this.droppedItem = this.dropItem();
   }
 
+  ///<summary>Test</summary>
   receiveDamage(player) {
     this.hp -= player.dmg;
     console.log(
@@ -37,5 +39,12 @@ class Enemy {
     console.log(
       `${this.name} drops x${quantity} ${this.dropItemList[dropTtemIdentifier]}.`
     );
+
+    //test create drop item
+    let itemDrop = new Item(this.dropItemList[dropTtemIdentifier], quantity);
+
+    console.log(itemDrop);
+
+    return itemDrop;
   }
 }

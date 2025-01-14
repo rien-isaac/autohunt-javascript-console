@@ -8,7 +8,7 @@ class Player {
     this.dmg;
     this.maxHp = this.level * 5 + 5;
     this.hp = this.maxHp;
-    this.inventory = ["Stick", "Stone", "Leaf"];
+    this.inventory = ["good shit"];
   }
 
   displayInfo() {
@@ -53,5 +53,27 @@ EXP ${this.exp}/${this.maxExp}
       this.exp += excessExp;
       this.maxExp = this.level * 5;
     }
+  }
+
+  pickItem(enemyDrop) {
+    //pick enemy's drop item
+    console.log(enemyDrop.name);
+    console.log(enemyDrop.quantity);
+
+    let isPresent = this.inventory.map(function (item) {
+      return item.name == enemyDrop.name;
+    });
+
+    console.log(`test`);
+    console.log(isPresent);
+
+    this.inventory.forEach(function (item) {
+      if (item.name == enemyDrop.name) {
+        //
+        item.quantity += enemyDrop.quantity;
+      } else {
+        this.inventory.push(enemyDrop);
+      }
+    });
   }
 }
