@@ -18,11 +18,8 @@ let landOfTheGoblin = new Dungeon(
 landOfTheGoblin.exploration();
 landOfTheGoblin.closeDungeon();
 
-player.displayInfo();
-
-goblin.dropItem();
-player.pickItem(goblin.dropItem());
-
-console.log(`Player's Inventory: ${player.inventory}`);
+// console.log(`Player's Inventory: ${player.inventory}`);
 
 console.log(player);
+
+player.displayInfo();

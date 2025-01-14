@@ -10,7 +10,6 @@ class Enemy {
     this.droppedItem = this.dropItem();
   }
 
-  ///<summary>Test</summary>
   receiveDamage(player) {
     this.hp -= player.dmg;
     console.log(
@@ -20,7 +19,7 @@ class Enemy {
       this.hp = 0;
       this.died();
       player.gainExp(this.giveExp);
-      this.dropItem();
+      player.pickItem(this.dropItem());
     }
   }
 
@@ -42,8 +41,6 @@ class Enemy {
 
     //test create drop item
     let itemDrop = new Item(this.dropItemList[dropTtemIdentifier], quantity);
-
-    console.log(itemDrop);
 
     return itemDrop;
   }
