@@ -15,7 +15,7 @@ class Dungeon {
     );
 
     for (let i = 0; i < numOfEnemy; i++) {
-      let goblin = new Enemy(`Test-${i}`, 5, 5, 10);
+      let goblin = new Enemy(`Test-${i}`, 5);
       this.enemies.push(goblin);
     }
   }

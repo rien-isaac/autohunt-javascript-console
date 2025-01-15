@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      /* font-family: "Tiny5", serif; */
+      font-family: sans-serif;
+    }
+    button {
+      padding: 0.2rem 0.4rem;
+      margin: 0.2rem 0;
+    }
+
+    .player-info-container {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-container {
+      outline: 1px dashed #000;
+      padding: 0.5rem 0.5rem;
+      margin: 0 1rem;
+    }
+
+    .text-container .text {
+      font-size: 0.8rem;
+    }
+  </style>
   <body>
-    <button id="testBtn">Test</button>
+    <div class="player-info-container">
+      <p id="player-name">Name:</p>
+      <p id="player-level">Lvl:</p>
+      <p id="player-hp">Hp: 0</p>
+      <progress id="hp-bar" value="25" max="100">Hp</progress>
+      <p id="player-exp">Exp: 0 / 0</p>
+      <progress id="exp-bar" value="0" max="100">Hp</progress>
+    </div>
+    <div class="dungeon-container">
+      <p>Available Dungeons:</p>
+
+      <button id="LandOfGoblinBtn">Land Of Goblin</button>
+      <button id="ConferenceRoomBtn">Conference Room</button>
+    </div>
+
+    <div class="player-action-container">
+      <p>Player Actions:</p>
+      <button id="showInfoBtn">Show Info</button>
+      <button id="taskDelayBtn">Test Delay</button>
+      <button>Coming Soon</button>
+    </div>
+    <div class="text-container">
+      <p id="changingText" class="text">Test Message</p>
+    </div>
   </body>
 
   <script src="./player.js"></script>

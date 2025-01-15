@@ -1,12 +1,11 @@
 class Enemy {
-  constructor(name, level, maxHp) {
+  constructor(name, level) {
     this.name = name;
     this.level = level;
     this.giveExp = Math.floor(Math.random() * this.level + this.level);
     this.maxHp = this.level * 5 + 5;
     this.hp = this.maxHp;
     this.dropItemList = ["foil", "good shit", "maryjane", "lighter", "yosi"];
-    this.droppedItem = this.dropItem();
   }
 
   receiveDamage(player) {

@@ -22,9 +22,18 @@ LVL ${this.level}
 EXP ${this.exp}/${this.maxExp}
 💪 ${this.baseDmg}
 🎒 ${this.inventory.length}/9
-
 `
     );
+
+    this.showInventory();
+  }
+
+  showInventory() {
+    for (let i = 0; i < this.inventory.length; i++) {
+      console.log(
+        `\t${i + 1}. ${this.inventory[i].name}(${this.inventory[i].quantity})`
+      );
+    }
   }
 
   attack(enemy) {
@@ -61,8 +70,6 @@ EXP ${this.exp}/${this.maxExp}
     let isPresent = this.inventory.some(function (item) {
       return item.name == enemyDrop.name;
     });
-
-    console.log(isPresent);
 
     if (isPresent) {
       this.inventory.forEach(function (item) {
