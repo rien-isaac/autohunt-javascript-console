@@ -31,39 +31,26 @@ arrayOfMessage.push("Go POKEMON!");
 arrayOfMessage.push("POKEMON uses ATTACK and deal 30 damage.");
 arrayOfMessage.push("POKEMON LEVEL UP!");
 arrayOfMessage.push(`${player.name} decided to flee.`);
-arrayOfMessage.push("Hoy!");
-arrayOfMessage.push("Yung Tropa mo");
-arrayOfMessage.push("bato ng bato");
-arrayOfMessage.push("sa bubong ng bahay namen.");
-arrayOfMessage.push("");
 
 let changingTxt = document.getElementById("changingText");
 
 let counter = 0;
-let interval = 700;
+let interval = 1500;
 
 let TaskDelayBtn = document.getElementById("taskDelayBtn");
 TaskDelayBtn.addEventListener("click", function () {
-  console.log(`test`);
-  // test;
-  // setInterval(testFunction, interval);
-  test;
+  setInterval(changeTextContent, interval);
   counter = 0;
 });
 
-let test = setInterval(testFunction, interval);
-
-function testFunction() {
+function changeTextContent() {
   changingTxt.textContent = arrayOfMessage[counter];
   counter++;
-
-  if (counter > arrayOfMessage.length - 1) {
-    clearInterval(test);
-  }
 }
 
 let playerName = document.getElementById("player-name");
 let playerLevel = document.getElementById("player-level");
+
 let playerHp = document.getElementById("player-hp");
 let playerExp = document.getElementById("player-exp");
 
@@ -73,12 +60,55 @@ let expBar = document.getElementById("exp-bar");
 window.onload = function (e) {
   setInterval(function () {
     playerName.textContent = `Name: ${player.name}`;
-    hpBar.value = player.hp;
-    hpBar.max = player.maxHp;
     playerLevel.textContent = `Lvl: ${player.level}`;
-    playerHp.textContent = `🧡: ${player.hp}/${player.maxHp}`;
+    playerHp.textContent = `Hp: ${player.hp}/${player.maxHp}`;
     playerExp.textContent = `Exp: ${player.exp}/${player.maxExp}`;
-    expBar.value = player.exp;
-    expBar.max = player.maxExp;
-  }, 1500);
+  }, 24);
 };
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+  switch (event.key) {
+    case "ArrowLeft":
+      // Left pressed
+      player.exp -= 1;
+      player.levelUp();
+      break;
+    case "ArrowRight":
+      // Right pressed
+      player.exp += 1;
+      player.levelUp();
+      break;
+    case "ArrowUp":
+      // Up pressed
+      break;
+    case "ArrowDown":
+      // Down pressed
+      break;
+  }
+});
+
+function displayPlayerInfo() {
+  player.displayInfo();
+}
+
+let displayPlayerInventoryBtn = document.getElementById(
+  "displayPlayerInventoryBtn"
+);
+
+displayPlayerInventoryBtn.addEventListener("click", function () {
+  inventory();
+});
+
+function inventory() {
+  player.inventory.forEach(function (item) {
+    let item_box = document.createElement("div");
+    let item_name = document.createElement("p");
+
+    item_name.textContent = `${item.name} (${item.quantity})`;
+    item_name.classList.add("item-name");
+    item_box.appendChild(item_name);
+    item_box.classList.add("item");
+    document.getElementById("inventory-container").appendChild(item_box);
+  });
+}

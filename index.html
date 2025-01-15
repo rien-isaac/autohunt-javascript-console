@@ -16,8 +16,8 @@
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      /* font-family: "Tiny5", serif; */
-      font-family: sans-serif;
+      font-family: "Tiny5", serif;
+      font-size: 1.3rem;
     }
     button {
       padding: 0.2rem 0.4rem;
@@ -36,10 +36,22 @@
     }
 
     .text-container .text {
-      font-size: 0.8rem;
+      /* font-size: 2rem; */
     }
-    progress {
-      accent-color: #00ff00;
+
+    .item {
+      width: 15rem;
+      margin: auto;
+      display: inline-block;
+    }
+
+    .item-name {
+      margin: 1rem 1rem;
+      padding: 1rem 1rem;
+      outline: 1px solid #000;
+      text-align: center;
+
+      border-radius: 0.8rem;
     }
   </style>
   <body>
@@ -47,9 +59,7 @@
       <p id="player-name">Name:</p>
       <p id="player-level">Lvl:</p>
       <p id="player-hp">Hp: 0</p>
-      <progress id="hp-bar" value="25" max="100">Hp</progress>
       <p id="player-exp">Exp: 0 / 0</p>
-      <progress id="exp-bar" value="0" max="100">Hp</progress>
     </div>
     <div class="dungeon-container">
       <p>Available Dungeons:</p>
@@ -62,10 +72,14 @@
       <p>Player Actions:</p>
       <button id="showInfoBtn">Show Info</button>
       <button id="taskDelayBtn">Test Delay</button>
-      <button>Coming Soon</button>
+      <button id="displayPlayerInventoryBtn">Display Player Inventory</button>
     </div>
     <div class="text-container">
       <p id="changingText" class="text">Test Message</p>
+    </div>
+
+    <div id="inventory-container" class="inventory-container">
+      <!-- insert every inventory items here -->
     </div>
   </body>
 

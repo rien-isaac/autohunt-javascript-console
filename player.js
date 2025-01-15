@@ -9,6 +9,7 @@ class Player {
     this.maxHp = this.level * 5 + 5;
     this.hp = this.maxHp;
     this.inventory = [];
+    this.message = this.message;
   }
 
   displayInfo() {
@@ -38,7 +39,8 @@ EXP ${this.exp}/${this.maxExp}
 
   attack(enemy) {
     this.dmg = this.baseDmg + this.level;
-    console.log(`${this.name} attacks and deal ${this.dmg} DAMAGE.`);
+    // console.log(`${this.name} attacks and deal ${this.dmg} DAMAGE.`);
+    this.message = `${this.name} attacks and deal ${this.dmg} DAMAGE.`;
     enemy.receiveDamage(player);
   }
 
