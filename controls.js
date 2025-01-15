@@ -39,15 +39,19 @@ arrayOfMessage.push("");
 
 let changingTxt = document.getElementById("changingText");
 
+let counter = 0;
+let interval = 700;
+
 let TaskDelayBtn = document.getElementById("taskDelayBtn");
 TaskDelayBtn.addEventListener("click", function () {
   console.log(`test`);
+  // test;
+  // setInterval(testFunction, interval);
   test;
+  counter = 0;
 });
 
-const test = setInterval(testFunction, 1500);
-
-let counter = 0;
+let test = setInterval(testFunction, interval);
 
 function testFunction() {
   changingTxt.textContent = arrayOfMessage[counter];
