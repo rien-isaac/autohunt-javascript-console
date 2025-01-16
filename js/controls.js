@@ -54,8 +54,7 @@ let playerLevel = document.getElementById("player-level");
 let playerHp = document.getElementById("player-hp");
 let playerExp = document.getElementById("player-exp");
 
-let hpBar = document.getElementById("hp-bar");
-let expBar = document.getElementById("exp-bar");
+let playerDmg = document.getElementById("player-dmg");
 
 window.onload = function (e) {
   setInterval(function () {
@@ -63,6 +62,7 @@ window.onload = function (e) {
     playerLevel.textContent = `Lvl: ${player.level}`;
     playerHp.textContent = `Hp: ${player.hp}/${player.maxHp}`;
     playerExp.textContent = `Exp: ${player.exp}/${player.maxExp}`;
+    playerDmg.textContent = `Dmg: ${player.baseDmg}`;
   }, 24);
 };
 

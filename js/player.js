@@ -9,7 +9,7 @@ class Player {
     this.maxHp = this.level * 5 + 5;
     this.hp = this.maxHp;
     this.inventory = [];
-    this.message = this.message;
+    this.coins = 0;
   }
 
   displayInfo() {
@@ -52,6 +52,13 @@ EXP ${this.exp}/${this.maxExp}
   }
 
   levelUp() {
+    //for arrow key control
+    //set exp to zero
+    if (this.exp < 0) {
+      this.exp = 0;
+    }
+    //end of for arrow key control
+
     let previousLevel = this.level;
     if (this.exp >= this.maxExp) {
       let excessLevel = Math.floor(this.exp / this.maxExp);

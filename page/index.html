@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="player-info-container">
+      <p id="player-name"></p>
+      <p id="player-level"></p>
+      <p id="player-hp"></p>
+      <p id="player-exp"></p>
+      <p id="player-dmg"></p>
+    </div>
+
+    <div class="player-action-container">
+      <button class="player-action-btn" id="hunt-btn">Hunt</button>
+      <button class="player-action-btn" id="sell-item-btn">Sell Item</button>
+      <button class="player-action-btn" id="buy-item-btn">Buy Item</button>
+    </div>
+
+    <div id="hunt-box" class="hunt-box">
+      <div class="hunt-box-title">
+        <h3>Enemies</h3>
+        <button class="close-hunt-box-btn" id="close-hunt-box-btn">
+          Close
+        </button>
+      </div>
+      <div class="enemy-list-box">
+        <div id="enemy-box" class="enemy-box">
+          <!-- insert clickable enemies here -->
+        </div>
+      </div>
+    </div>
+
+    <div id="inventory-container" class="inventory-container">
+      <!-- insert every inventory items here -->
+    </div>
+  </body>
+
+  <script src="../js/dungeon.js"></script>
+  <script src="../js/battle.js"></script>
+  <script src="../js/enemy.js"></script>
+  <script src="../js/player.js"></script>
+  <script src="../js/item.js"></script>
+  <script src="../js/index.js"></script>
+  <!-- <script src="../js/controls.js"></script> -->
+</html>
