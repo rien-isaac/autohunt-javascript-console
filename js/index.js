@@ -23,9 +23,7 @@ HuntBtn.addEventListener("click", function () {
 let CloseHuntBoxBtn = document.getElementById("close-hunt-box-btn");
 
 CloseHuntBoxBtn.addEventListener("click", function () {
-  if (HuntBox.style.display === "flex") {
-    HuntBox.style.display = "none";
-  }
+  HuntBox.style.display = "none";
 });
 
 let EnemyList = [slime, wolf, goblin, lycan];
@@ -47,3 +45,26 @@ function ListEnemies() {
     document.getElementById("enemy-box").appendChild(clickableEnemy);
   });
 }
+
+// function ListItems() {
+//   player.inventory.forEach(function (item) {
+
+//   });
+// }
+
+let SellItemBtn = document.getElementById("sell-item-btn");
+
+let SellItemBox = document.getElementById("sell-item-box");
+let SellItemBoxCloseBtn = document.getElementById("sell-item-box-close-btn");
+
+SellItemBtn.addEventListener("click", function () {
+  if (SellItemBox.style.display === "none") {
+    SellItemBox.style.display = "flex";
+  } else {
+    SellItemBox.style.display = "flex";
+  }
+});
+
+SellItemBoxCloseBtn.addEventListener("click", function () {
+  SellItemBox.style.display = "none";
+});

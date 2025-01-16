@@ -11,6 +11,8 @@ body {
   width: 100vw;
 
   box-sizing: border-box;
+
+  color: #fff;
 }
 .player-action-container {
   width: 480px;
@@ -36,7 +38,7 @@ body {
   margin-bottom: 1rem;
 }
 
-#hunt-box {
+.box {
   width: 640px;
   height: 480px;
   margin: auto;
@@ -44,10 +46,11 @@ body {
   flex-direction: column;
   position: relative;
   border-radius: 0.4rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
+  background-color: #6f4e37;
 }
 
-.hunt-box-title {
+.title-block {
   display: flex;
   flex-direction: row;
   height: 50px;
@@ -56,7 +59,7 @@ body {
   align-items: center;
 }
 
-.close-hunt-box-btn {
+.close-btn {
   border-radius: 0.4rem;
   padding: 0.4rem;
   border: none;
@@ -84,11 +87,33 @@ body {
   margin: 0 1rem;
 }
 
+.item-list-box {
+  display: flex;
+  flex-direction: row;
+}
+
 .item {
+  width: 34rem;
+  padding: 0.5rem;
+  margin: 0.5rem 1rem;
+  outline: 1px solid #fff;
+  border-radius: 0.4rem;
+}
+.item-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.quantity {
+  font-size: 0.8rem;
+}
+
+/* .item {
   width: 15rem;
   margin: auto;
   display: inline-block;
-}
+} */
 
 .item-name {
   margin: 1rem 1rem;
@@ -96,5 +121,5 @@ body {
   outline: 1px solid #000;
   text-align: center;
 
-  border-radius: 0.8rem;
+  border-radius: 1rem;
 }
